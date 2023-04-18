@@ -10,10 +10,11 @@ public class Customer {
 
 	public Customer(){}
 	
-	public Customer(int custId, String name, int age){
+	public Customer(int custId, String name, int age, String[] hobby) {
 		this.custId = custId;
 		this.name = name;
 		this.age = age;
+		this.hobby = hobby;
 	}
 	
 	public int getCustId() {
@@ -55,6 +56,4 @@ public class Customer {
 	}
 
 
-
-	
 }

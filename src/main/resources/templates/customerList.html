@@ -8,17 +8,26 @@
 <h2>客户列表</h2>
 
 <table border="1">
-  <tr>
-    <th>编号</th>
-    <th>姓名</th>
-    <th>年龄</th>
-  </tr>
     <tr>
-      <td th:text="${customer.custId}"></td>
-      <td th:text="${customer.name}"></td>
-      <td th:text="${customer.age}"></td>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>兴趣爱好</th>
     </tr>
-  </c:forEach>
+    <tr>
+        <td th:text="${customer.custId}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.age}"></td>
+        <td>
+            <th:block th:each="hobby,stat : ${customer.hobby}">
+                <span th:text="${hobby}"></span>
+              <span th:if="${stat.last !=true}">,</span>
+            </th:block>
+        </td>
+
+
+    </tr>
+    </c:forEach>
 </table>
 <br>
 </body>
